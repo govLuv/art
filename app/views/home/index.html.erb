@@ -1,0 +1,88 @@
+<div class="fgbox">
+	Introductory Content. Here is <a href='#'>a link</a> to test.
+</div>
+<div class="fgbox">
+
+<h2>Model</h2>
+<div class="essay">
+Artists will be able to publish essays and comment on their own and other essays. A comment 
+
+may either be a root comment or a reply. A root comment is attached to a specific part of an 
+
+essay, a reply to another comment.
+
+Artists may also highlight comments they find particularly insightful and record quotes from 
+
+essays. They can bookmark essays they wish to read later.
+
+The following is a rough schema for a relational database.
+
+<h3>Artist</h3>
+
+name
+
+password
+
+email
+
+<h3>Essay</h3>
+
+artist_id
+
+content
+
+post_time
+
+post_anon? (give user to option to post some essays without their name)
+
+<h3>Comment</h3>
+
+essay_id
+
+artist_id
+
+content
+
+post_time
+
+<h3>Root_comment</h3>
+
+comment_id
+
+position (position in the essay, can be done by line number range)
+
+<h3>Reply</h3>
+
+comment_id
+
+parent_id
+
+<h3>Quote</h3>
+
+essay_id
+
+artist_id
+
+content (perhaps just specified by position in essay if we want to save space)
+
+position (so we can jump back to place in essay immediately)
+
+<h3>Highlight</h3>
+
+aritst_id
+
+comment_id
+
+<h3>Bookmark</h3>
+
+essay_id
+
+user_id
+
+mark_time
+
+We would also want heuristics to suggest essays and figure out which comments to display if 
+
+there’s a densely discussed portion of the essay.
+</div>
+</div>
