@@ -18,12 +18,13 @@ $pg_width_min: 300px;
 $pg_width_max: 900px;
 
 //	Text
-$font_family: 'Bellaza', sans-serif;
+$font_family: 'Quattrocento', serif;
 $font_color: $dark_gray;
 $a_color: #600a06;
 $a_visited: #60062d;
 $highlight_color: rgba(96, 0, 10, 0.85);
-
+$h_font1: $font_family; 
+$h_font2: 'Julius Sans One', sans-serif;
 
 /***************************************
 	MIXINS
@@ -57,7 +58,8 @@ $highlight_color: rgba(96, 0, 10, 0.85);
 body {
 	@include gradient($dark_red,$dark_gray);
 	padding: 0;
-	font-family: $font_family; 
+	// font-family: $font_family; 
+	font-family: $h_font1; 
 	color: $font_color;
 }
 
@@ -73,6 +75,7 @@ div#container {
 }
 
 .essay {
+	line-height: 22px;
 	columns:300px 2;
 	-webkit-columns:300px 2; /* Safari and Chrome */
 	-moz-columns:300px 2; /* Firefox */
@@ -112,12 +115,12 @@ a {
 
 h1, h2, h5, h6 {
 	font-weight: normal;
-	font-family: 'Quattrocento', serif;
+	font-family: $h_font1;
 	margin: 3px 0 5px 0; 
 }
 
 h3, h4 {
-	font-family: 'Julius Sans One', sans-serif;
+	font-family: $h_font2; 
 	font-size: 1.1em;
 	margin-bottom: 5px;
 }

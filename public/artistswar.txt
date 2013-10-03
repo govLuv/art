@@ -1,0 +1,135 @@
+# Purpose
+
+# Site Structure
+## Model
+__Artist__s publish __essay__s and __comment__ on their own and other essays. 
+A comment may either be a __root comment__ or a __reply__. A root comment is 
+attached to a __page__ of an essay, a reply to another comment.
+
+Artists may also __highlight__ comments they find particularly insightful and record
+__quote__s from essays. They can __bookmark__ essays they wish to read later (though
+this could perhaps be automated).
+
+The following is a rough schema for a relational database.
+
+### Artist
+- name
+- password
+- email
+### Essay
+- artist_id
+- title
+### Page
+- essay_id
+- number
+### Comment
+- essay_id
+- artist_id
+- content
+- post_time
+### Root_comment
+- comment_id
+- quote_id
+### Reply
+- comment_id
+- parent_id
+### Quote 
+- page_id
+- artist_id
+- content 
+### Highlight
+- aritst_id
+- comment_id
+### Bookmark
+- essay_id
+- user_id
+- page_number
+
+We would also want heuristics to suggest essays and figure out which comments 
+to display if there's a densely discussed portion of the essay.
+ 
+Possible heuristics for essays:
+
+- number of times linked to in other comments
+- number of comments it has 
+- number of times it has been quoted
+
+Possible heuristics for comments:
+
+- number of times highlighted
+- number of replies
+- heuristics based on user
+
+_**Potential direction of progress:** create an abstraction layer that 
+allows users to visualize and organize relationships between essays._
+
+## Pages
+
+### Home
+
+#### Returning Users
+Modules to display quote collection, essays read 
+or published, highlighted comments. Suggestions for next read.
+
+#### New Users 
+Site's statement of purpose. Explanation of site layout. 
+
+Link to simple registration page.
+
+### Essay
+
+#### Composition
+
+Textbox to submit [Markdown](http://dafoster.net/projects/rdiscount/)
+formatted essays. 
+
+Option to save as a draft.
+
+To add:
+
+- [MathJax](http://www.mathjax.org/) Support
+
+#### Presentation
+
+Presented in two column or one column format depending on page width.
+
+When user highlights portion of the text, box appears asking if user 
+would like to comment or add text to quote collection. 
+
+Some sources to help accomplish this:
+
+- [Text highlight event](http://stackoverflow.com/questions/3731328/on-text-highlight-event)
+- [Position element next to highlight](http://stackoverflow.com/questions/1589721/how-can-i-position-an-element-next-to-user-text-selection/1589912#1589912)
+- [Text selection coordinates](http://stackoverflow.com/questions/6846230/javascript-text-selection-page-coordinates)
+
+User can double-click to highlight a comment.
+
+Potential issue: quotes that span more than one column.. perhaps reduce 
+to single column format as we slide.
+
+Other additions to the essay page include:
+
+- Button that links to author's page
+- Button to bookmark the essay
+
+### Artist's Page
+
+#### As viewed by the Artist
+Space to edit personal info and open essay drafts.
+
+Space to review quotes, comments, bookmarks, highlights.
+
+To consider:
+
+- Add alias options?
+
+#### As viewed by a visitor
+Lists the essays by this author. Lists any other info the author has volunteered.
+
+Potentially cycle through quotes the author has specified (from own work or others).
+
+## Posts
+Nature and Realm
+Money: division between rich and poor
+Ultimate purpose of money: overcome space-time with regard to sensuality, sensual efficiency. 
+7 Habits of Highly Ineffective Societies
