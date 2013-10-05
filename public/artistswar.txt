@@ -16,9 +16,12 @@ The following is a rough schema for a relational database.
 - name
 - password
 - email
+- ad_banner?
 ### Essay
 - artist_id
 - title
+- introduction
+- public_comments?
 ### Page
 - essay_id
 - number

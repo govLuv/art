@@ -29,7 +29,7 @@ describe User do
 	end
 	
 	describe "when name format is valid" do 
-		names = ["John Johnson","Rick Mathers","Pork D II"]
+		names = ["John Johnson","Richard Ion Mathers IX","Pork D II"]
 		names.each do |valid_name|
 			before{ @user.name = valid_name }
 			it { should be_valid }

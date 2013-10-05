@@ -1,3 +1,19 @@
-<div class="fgbox">
-	Form to sign up here.
+<% provide(:title, "Join") %> 
+<%= render 'shared/error_messages' %>
+<div id="registration" class="fgbox">
+	<%= form_for(@user) do |f| %>
+	 <%= f.label :name, "Pen Name" %>
+	 <%= f.text_field :name %>
+
+	 <%= f.label :email %>
+	 <%= f.text_field :email %>
+
+	 <%= f.label :password %>
+	 <%= f.password_field :password %>
+
+	 <%= f.label :password_confirmation, "Again" %>
+	 <%= f.password_field :password_confirmation %>
+
+	 <%= f.submit "Register" %>
+	<% end %>
 </div>

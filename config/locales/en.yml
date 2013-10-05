@@ -20,4 +20,19 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+    activerecord:
+        attributes:
+            user:
+        errors:
+            models:
+                user:
+                    attributes:
+                        name:
+                            invalid: "should be First and Last (with maybe a Middle)"
+                        email:
+                            invalid: "should be legit"
+                        password:
+                            blank: "should be there"
+                            too_short: "should be at least 6 characters"
+
+                        
