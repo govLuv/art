@@ -18,13 +18,13 @@ div#registration {
 		width: 150px;
 		float: left;
 		margin: 5px 0 3px 10px;
-		&:focus {
-			background-color: #ddd;
-		}
 	}
+	$submit_width: 120px;
 	input[type="submit"] {
-		margin-left: 100px;
-
+		width: $submit_width;
+	}
+	div.center {
+		width: $submit_width;
 	}
 }	
 div#registration_notes {

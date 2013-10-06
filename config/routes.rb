@@ -6,6 +6,8 @@ Art::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
   match '/join', 	to: 'users#new',	via: 'get'
+  match '/signout',	to: 'sessions#destroy',	via: 'delete'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -13,6 +15,7 @@ Art::Application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   resources :users
+  resources :sessions, only: [:create, :destroy]
 
   # Example resource route with options:
   #   resources :products do

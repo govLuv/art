@@ -21,13 +21,14 @@
 	min-width: $pg_width_min;
 	max-width: $pg_width_max;
 	margin: 0 auto;
-	padding: $def_padding;
+	padding:10px 0; // $def_padding;
 }
 
 /***************************************
 	GLOBAL STYLES
  ***************************************/
 
+// Divs and Containers
 
 body {
 	@include gradient($dark_red,$dark_gray);
@@ -39,7 +40,23 @@ body {
 
 div#header {
 	background-color: $red_gray;
-	@include content-spacing();	
+	@include content-spacing();
+	div.signin {
+		float: right;
+		padding: 2px;
+		border-radius: 5px;
+		border: 2px solid $steel;
+		background-color: $dark_red;
+		margin-top:    8px;
+		margin-right: 10px;	
+		input {
+			width: 100px;
+		}
+
+		a {
+			color: $light_gray;
+		}
+	}
 }
 
 div#container {
@@ -63,7 +80,7 @@ div#container {
 	}
 }
 
-div#errors {
+div#errors, div.error {
 	background-color: $error_red;
 	color: $fafa_white;
 	padding: $def_padding;
@@ -73,13 +90,7 @@ div#errors {
 	}
 }
 
-.field_with_errors {
-	label {
-		color: $error_red;
-	}
-}
-
-div.flash {
+div.success {
 	padding: $def_padding;
 	border: 2px solid $dark_red;
 	background: $light_gray;
@@ -88,14 +99,33 @@ div.flash {
 .fgbox {
   padding: $def_padding;
   margin: $def_margin;
-  background-color: $light_gray;
+ // background-color: $light_gray;
+
+  background-color: $fafa_white;
   box-shadow: 0px 5px 5px $dark_gray;
 }
 
-ul.nav {
-  display: inline;
-  list-style-type: none;
+div#navbar {
+	overflow: hidden;
 }
+
+ul.nav {
+  list-style-type: none;
+  float: left;
+  li {
+	  display: inline;
+	  margin-right: 10px;
+	  a {
+		  color: $fafa_white;
+	  }
+  }
+}
+
+div.center {
+	margin: 0 auto;
+}
+
+// Inner Elements
 
 a {
     font-weight: bold;
@@ -117,11 +147,39 @@ h1, h2, h5, h6 {
 
 h3, h4 {
 	font-family: $h_font2; 
-	font-size: 1.1em;
+	font-size: 1em;
 	margin-bottom: 5px;
 }
 
-h1 { margin-left: 10px; }
+h1 { 
+	margin-left: 10px; 
+	color: $light_gray;
+}
+
+.field_with_errors {
+	label {
+		color: $error_red;
+	}
+}
+
+input {
+	border-radius: 3px;
+	border: 1px solid darken($light_gray,10);
+	background-color: $fafa_white;
+	&:focus {
+		border-color: $fafa_white;
+		background-color: darken($fafa_white,5);
+	}
+}
+
+input.button {
+  background-image: linear-gradient(lighten($red_gray,5), $red_gray, $red_gray);
+  background-color: $red_gray;
+  border: 1px solid $steel;
+  border-radius: 5px;
+  color: $fafa_white;
+  padding: 3px;
+}
 
 /***************************************
 	

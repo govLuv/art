@@ -11,6 +11,8 @@ class UsersController < ApplicationController
 	@user = User.new(user_params)
 	if @user.save
 		flash[:new_profile] = "Enjoy your new account!"
+		sign_in(@user)
+		# session[:remember_token] = user.id
 		redirect_to @user
 	else
 		render 'new'

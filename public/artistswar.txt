@@ -2,26 +2,28 @@
 
 # Site Structure
 ## Model
-__Artist__s publish __essay__s and __comment__ on their own and other essays. 
+__User__s publish __essay__s and __comment__ on their own and other essays. 
 A comment may either be a __root comment__ or a __reply__. A root comment is 
 attached to a __page__ of an essay, a reply to another comment.
 
-Artists may also __highlight__ comments they find particularly insightful and record
+Users may also __highlight__ comments they find particularly insightful and record
 __quote__s from essays. They can __bookmark__ essays they wish to read later (though
 this could perhaps be automated).
 
 The following is a rough schema for a relational database.
 
-### Artist
+### User
 - name
 - password
 - email
 - ad_banner?
+- show_gravatar?
 ### Essay
 - artist_id
 - title
 - introduction
 - public_comments?
+- moderate_comments?
 ### Page
 - essay_id
 - number
@@ -130,6 +132,9 @@ To consider:
 Lists the essays by this author. Lists any other info the author has volunteered.
 
 Potentially cycle through quotes the author has specified (from own work or others).
+
+## Misc Features to Add
+- Remember Me? option at signin
 
 ## Posts
 Nature and Realm
